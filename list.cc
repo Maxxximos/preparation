@@ -202,7 +202,6 @@ int main()
     lst.push_front(2);
     lst.push_front(1);
 
-
     while(not lst.empty())
     {
         int front = lst.front();

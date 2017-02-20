@@ -199,28 +199,48 @@ public:
         std::cout << "2 AAA tail: " << tail << " prev: " << tail->prev << " next: " << tail->next << " val " << tail->value << "\n";
         tail = tail->next;
     }
+    
+    void print_reversed_list()
+    {
+        static List* node = head;
+        if (node == nullptr) 
+        {
+            return;
+        }
+
+        int val= node->value;
+        
+        node = node->next;
+
+        print_reversed_list();
+        std::cout << val << std::endl;
+    }
 };
 
 int main()
 {
     List lst;
 
-    lst.push_back(10);
-    lst.push_back(9);
-    lst.push_back(8);
+    lst.push_back(1);
+    lst.push_back(2);
+    lst.push_back(3);
+    lst.push_back(4);
+
+    lst.push_back(5);
+    lst.push_back(6);
     lst.push_back(7);
+    lst.push_back(8);
 
-    lst.push_front(4);
-    lst.push_front(3);
-    lst.push_front(2);
-    lst.push_front(1);
-
-    while(not lst.empty())
-    {
-        int front = lst.front();
-        int back = lst.back();
-        std::cout << "front: " << front << " back: " << back << "\n";
-        lst.pop_back();
-        lst.pop_front();
-    }
+//    while(not lst.empty())
+//    {
+//        int front = lst.front();
+//        int back = lst.back();
+//        std::cout << "front: " << front << " back: " << back << "\n";
+//        lst.pop_back();
+//        lst.pop_front();
+//    }
+ 
+//    lst.print_reversed_list();
+    
+    
 }
